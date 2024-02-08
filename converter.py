@@ -2,6 +2,7 @@
 Converts text to base64 and base64 to plaintext
 can make a file or use a file u got already to store
 the results, it also prints the results in the terminal
+the program can also take input from a hex file and covert it to ascii
 '''
 import argparse
 from time import sleep
@@ -45,7 +46,7 @@ quit:(q):
     elif string == "q":
         print("Ight im out")
     else:
-        print("Not sure what u mean, try dat again")
+        print("Not sure what u mean, try again")
         menu()
 
 
@@ -82,7 +83,7 @@ def generate_mapping(hex_value, decimal_value):
 def get_results():
     generated_mappings = [generate_mapping(f"{i:02X}", i) for i in range(128)]
 
-    generated_mappings.append("I cant find a damn thing else! Im out this BIIIITCHH.")
+    generated_mappings.append("I cant find a damn thing else! Im outta here.")
 
     with open(input("What is the name of the hex file?:/> ")) as f:
         line = f.readline().strip()
